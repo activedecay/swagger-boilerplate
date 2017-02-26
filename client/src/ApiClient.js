@@ -55,7 +55,7 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://petstore.swagger.io/v2
+     * @default http://petstore.swagger.io/v2 // TODO API call relative path
      */
     this.basePath = 'http://petstore.swagger.io/v2'.replace(/\/+$/, '');
 
@@ -475,10 +475,10 @@
             }
           }
           var result = {};
-          for (var k in data) {
-            if (data.hasOwnProperty(k)) {
-              var key = exports.convertToType(k, keyType);
-              var value = exports.convertToType(data[k], valueType);
+          for (var j in data) {
+            if (data.hasOwnProperty(j)) {
+              var key = exports.convertToType(j, keyType);
+              var value = exports.convertToType(data[j], valueType);
               result[key] = value;
             }
           }

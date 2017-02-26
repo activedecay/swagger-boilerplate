@@ -86,7 +86,7 @@ exports.getPetById = function(args, res, next) {
   **/
     var examples = {};
   examples['application/json'] = {
-  "photoUrls" : [ "aeiou" ],
+  "photoUrls" : [ "lmfao-" + JSON.stringify(args.petId.value) ],
   "name" : "doggie",
   "id" : 123456789,
   "category" : {
@@ -114,6 +114,7 @@ exports.updatePet = function(args, res, next) {
    * parameters expected in the args:
   * body (Pet)
   **/
+  console.info(JSON.stringify(args.body))
   // no response value expected for this operation
   res.end();
 }
