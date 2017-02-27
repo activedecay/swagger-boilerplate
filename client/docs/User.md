@@ -1,4 +1,4 @@
-# SwaggerPetstore.User
+# Infogalactic.User
 
 ## Properties
 Name | Type | Description | Notes

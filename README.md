@@ -22,4 +22,5 @@ start the api server
 1. working client application
 1. backend storage (redis?)
 1. sessions (oauth)
-1. remove petstore stuff?
+#### related
+1. infogalactic svg size breakpoints

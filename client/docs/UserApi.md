@@ -1,15 +1,14 @@
-# SwaggerPetstore.UserApi
+# Infogalactic.UserApi
 
-All URIs are relative to *http://petstore.swagger.io/v2*
+All URIs are relative to *https://virtserver.swaggerhub.com/activedecay/infogalactic-news/0.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUser**](UserApi.md#createUser) | **POST** /user | Create user
 [**createUsersWithArrayInput**](UserApi.md#createUsersWithArrayInput) | **POST** /user/createWithArray | Creates list of users with given input array
-[**createUsersWithListInput**](UserApi.md#createUsersWithListInput) | **POST** /user/createWithList | Creates list of users with given input array
 [**deleteUser**](UserApi.md#deleteUser) | **DELETE** /user/{username} | Delete user
 [**getUserByName**](UserApi.md#getUserByName) | **GET** /user/{username} | Get user by user name
-[**loginUser**](UserApi.md#loginUser) | **GET** /user/login | Logs user into the system
+[**loginUser**](UserApi.md#loginUser) | **POST** /user/login | Logs user into the system
 [**logoutUser**](UserApi.md#logoutUser) | **GET** /user/logout | Logs out current logged in user session
 [**updateUser**](UserApi.md#updateUser) | **PUT** /user/{username} | Updated user
 
@@ -24,11 +23,11 @@ This can only be done by the logged in user.
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
-var body = new SwaggerPetstore.User(); // User | Created user object
+var body = new Infogalactic.User(); // User | Created user object
 
 
 var callback = function(error, data, response) {
@@ -68,11 +67,11 @@ Creates list of users with given input array
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
-var body = [new SwaggerPetstore.User()]; // [User] | List of user object
+var body = [new Infogalactic.User()]; // [User] | List of user object
 
 
 var callback = function(error, data, response) {
@@ -104,50 +103,6 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
-<a name="createUsersWithListInput"></a>
-# **createUsersWithListInput**
-> createUsersWithListInput(body)
-
-Creates list of users with given input array
-
-### Example
-```javascript
-var SwaggerPetstore = require('swagger_petstore');
-
-var apiInstance = new SwaggerPetstore.UserApi();
-
-var body = [new SwaggerPetstore.User()]; // [User] | List of user object
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.createUsersWithListInput(body, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**[User]**](User.md)| List of user object | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
 <a name="deleteUser"></a>
 # **deleteUser**
 > deleteUser(username)
@@ -158,9 +113,9 @@ This can only be done by the logged in user.
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
 var username = "username_example"; // String | The name that needs to be deleted
 
@@ -202,11 +157,11 @@ Get user by user name
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
-var username = "username_example"; // String | The name that needs to be fetched. Use user1 for testing.
+var username = "username_example"; // String | The name that needs to be fetched.
 
 
 var callback = function(error, data, response) {
@@ -223,7 +178,7 @@ apiInstance.getUserByName(username, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**| The name that needs to be fetched. Use user1 for testing. | 
+ **username** | **String**| The name that needs to be fetched. | 
 
 ### Return type
 
@@ -246,13 +201,13 @@ Logs user into the system
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
-var username = "username_example"; // String | The user name for login
+var username = "username_example"; // String | The login user name
 
-var password = "password_example"; // String | The password for login in clear text
+var password = "password_example"; // String | The password, cleartext
 
 
 var callback = function(error, data, response) {
@@ -269,8 +224,8 @@ apiInstance.loginUser(username, password, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**| The user name for login | 
- **password** | **String**| The password for login in clear text | 
+ **username** | **String**| The login user name | 
+ **password** | **String**| The password, cleartext | 
 
 ### Return type
 
@@ -293,9 +248,9 @@ Logs out current logged in user session
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
 var callback = function(error, data, response) {
   if (error) {
@@ -321,7 +276,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: Not defined
 
 <a name="updateUser"></a>
 # **updateUser**
@@ -333,13 +288,13 @@ This can only be done by the logged in user.
 
 ### Example
 ```javascript
-var SwaggerPetstore = require('swagger_petstore');
+var Infogalactic = require('infogalactic');
 
-var apiInstance = new SwaggerPetstore.UserApi();
+var apiInstance = new Infogalactic.UserApi();
 
 var username = "username_example"; // String | name that need to be updated
 
-var body = new SwaggerPetstore.User(); // User | Updated user object
+var body = new Infogalactic.User(); // User | Updated user object
 
 
 var callback = function(error, data, response) {
