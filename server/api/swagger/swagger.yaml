@@ -16,7 +16,7 @@ host: "localhost:8080"
 basePath: "/"
 tags:
 - name: "pet"
-  description: "Everything about your Pets"
+  description: "Everything about your pets"
   externalDocs:
     description: "Find out more"
     url: "http://swagger.io"
@@ -117,7 +117,7 @@ paths:
         collectionFormat: "multi"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             type: "array"
             items:
@@ -151,7 +151,7 @@ paths:
         collectionFormat: "multi"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             type: "array"
             items:
@@ -183,15 +183,15 @@ paths:
         format: "int64"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             $ref: "#/definitions/Pet"
         400:
           description: "Invalid ID supplied"
         404:
           description: "Pet not found"
-      security:
-      - api_key: []
+#      security:
+#      - api_key: []
       x-swagger-router-controller: "Pet"
     post:
       tags:
@@ -237,10 +237,10 @@ paths:
       - "application/json"
       - "application/xml"
       parameters:
-      - name: "api_key"
-        in: "header"
-        required: false
-        type: "string"
+#      - name: "api_key"
+#        in: "header"
+#        required: false
+#        type: "string"
       - name: "petId"
         in: "path"
         description: "Pet id to delete"
@@ -286,7 +286,7 @@ paths:
         type: "file"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             $ref: "#/definitions/ApiResponse"
       security:
@@ -306,14 +306,14 @@ paths:
       parameters: []
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             type: "object"
             additionalProperties:
               type: "integer"
               format: "int32"
-      security:
-      - api_key: []
+#      security:
+#      - api_key: []
       x-swagger-router-controller: "Store"
   /store/order:
     post:
@@ -333,7 +333,7 @@ paths:
           $ref: "#/definitions/Order"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             $ref: "#/definitions/Order"
         400:
@@ -361,7 +361,7 @@ paths:
         format: "int64"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             $ref: "#/definitions/Order"
         400:
@@ -398,7 +398,7 @@ paths:
       tags:
       - "user"
       summary: "Create user"
-      description: "This can only be done by the logged in user."
+      description: "This can only be done by the logged in user"
       operationId: "createUser"
       produces:
       - "application/json"
@@ -412,7 +412,7 @@ paths:
           $ref: "#/definitions/User"
       responses:
         default:
-          description: "successful operation"
+          description: "OK"
       x-swagger-router-controller: "User"
   /user/createWithArray:
     post:
@@ -434,7 +434,7 @@ paths:
             $ref: "#/definitions/User"
       responses:
         default:
-          description: "successful operation"
+          description: "OK"
       x-swagger-router-controller: "User"
   /user/createWithList:
     post:
@@ -456,7 +456,7 @@ paths:
             $ref: "#/definitions/User"
       responses:
         default:
-          description: "successful operation"
+          description: "OK"
       x-swagger-router-controller: "User"
   /user/login:
     get:
@@ -480,7 +480,7 @@ paths:
         type: "string"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             type: "string"
           headers:
@@ -507,7 +507,7 @@ paths:
       parameters: []
       responses:
         default:
-          description: "successful operation"
+          description: "OK"
       x-swagger-router-controller: "User"
   /user/{username}:
     get:
@@ -526,7 +526,7 @@ paths:
         type: "string"
       responses:
         200:
-          description: "successful operation"
+          description: "OK"
           schema:
             $ref: "#/definitions/User"
         400:
@@ -590,10 +590,10 @@ securityDefinitions:
     scopes:
       write:pets: "modify pets in your account"
       read:pets: "read your pets"
-  api_key:
-    type: "apiKey"
-    name: "api_key"
-    in: "header"
+#  api_key:
+#    type: "apiKey"
+#    name: "api_key"
+#    in: "header"
 definitions:
   Order:
     type: "object"

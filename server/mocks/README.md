@@ -1,1 +1,1 @@
-TODO Place controllers for mock mode in this directory.
+Place controllers for mock mode in this directory.
