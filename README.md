@@ -16,10 +16,9 @@ magic. <3
 ### production 
 start the api server
 
-    npm run start # node index.js (production)
+    npm run start:production # node index.js (production)
     
 # todo
-1. mocking
 1. working client application
 1. backend storage (redis?)
 1. sessions (oauth)
